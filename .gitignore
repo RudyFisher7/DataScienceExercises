@@ -6,7 +6,7 @@ data/
 *.db
 
 # Bytecode and cache
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *.so
 
