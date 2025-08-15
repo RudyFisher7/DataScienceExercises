@@ -3,3 +3,5 @@ matplotlib
 pandas
 notebook
 lxml
+numpy
+sqlalchemy

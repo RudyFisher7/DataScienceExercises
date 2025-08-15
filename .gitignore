@@ -1,0 +1,41 @@
+# Workspace
+data/
+*.csv
+*.tsv
+*.xlsx
+*.db
+
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment files
+.env
+*.env
+
+# Jupyter runtime
+.jupyter/
