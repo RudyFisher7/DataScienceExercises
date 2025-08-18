@@ -86,7 +86,7 @@ print(x9[[5, 2, 4]]) # Selects the elements at these indexes, in the order they 
 
 print(x9[[-3, -5, -1, 1]])
 
-x10 = np.arange(32).reshape((-1, 4))
+x10 = np.arange(32).reshape((-1, 4)) 
 
 print(x10)
 
@@ -99,3 +99,27 @@ print(x11)
 
 # Still returns a copy instead of a view.
 print(x11[:, [0, 3, 2, 1]]) # This selects the rectangular area in the 2D array, then rearranges elements to match the index array order.
+
+
+print('Transposing and Swapping Axes')
+x12 = np.arange(15).reshape((3, -1))
+print(x12)
+print(x12.T) # If rows are the samples (typical for a data table), this makes the features the rows.
+print(x12.swapaxes(0, 1)) # General function for swapping axes.
+
+
+print('Conditional Logic as Arrays')
+asc = np.arange(16)
+desc = np.flip(asc)
+print(asc)
+print(desc)
+print(np.shares_memory(asc, desc))
+
+cond = asc % 3 == 0
+print(cond)
+whered = np.where(cond, asc, desc) # Selects asc[i] if cond[i] else desc[i] as a new array.
+print(whered)
+print(np.shares_memory(whered, asc))
+
+
+print('Statistical Methods and More Math')
