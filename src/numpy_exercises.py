@@ -53,20 +53,49 @@ x3 = np.arange(16).reshape(-1, 4) # Automatically calculates the number of rows 
 print(x3)
 
 
-# Indexing and slicing.
-# NOTE:: Unlike Python lists, NumPy arrays return views of original array, not a copy.
-print('Indexing and Slicing')
+# Slicing.
+# NOTE:: Unlike Python lists, NumPy arrays return views of original array when slicing, not a copy.
+print('Slicing')
 x4 = x2[:2] # First 2 elements (rows).
 print(x4)
 
-x5 = x2[1:3,-2:] # Last 2 columns of rows [1, 3).
+x5 = x2[1:3, -2:] # Last 2 columns of rows [1, 3).
 print(x5)
 
+# Indexing.
+# NOTE:: Indexing returns a copy.
+print('Indexing')
 x6 = x2 % 2 == 0 # Returns a boolean array (True at indexes where elements are even.).
 print(x6)
 
 x7 = x2[x6] # Can use the boolean array for indexing.
 print(x7)
 
-x8 = x2[x2 % 2 != 0] # Get all the odd elements.
+x8 = x2[x2 % 2 != 0] # Select all the odd elements.
 print(x8)
+
+
+print('Fancy Indexing')
+x9 = np.zeros((8, 4), dtype=np.int64)
+for i in range(len(x9)):
+    x9[i] = i # Assigns all elements in the row to i.
+
+print(x9)
+
+print(x9[[5, 2, 4]]) # Selects the elements at these indexes, in the order they appear in the index array.
+
+print(x9[[-3, -5, -1, 1]])
+
+x10 = np.arange(32).reshape((-1, 4))
+
+print(x10)
+
+print(x10[[2, 3, 4, 5], [0, 1, 2, 3]]) # Selects elements on the diagonal starting at index [2, 0] and ending at [5, 3].
+print(x10[[2, 3, 4, 5], [0, 3, 2, 1]])
+
+x11 = x10[[2, 3, 4, 5]]
+print(np.shares_memory(x10, x11)) # Can be used to check if x10 is a view or a copy from x11.
+print(x11)
+
+# Still returns a copy instead of a view.
+print(x11[:, [0, 3, 2, 1]]) # This selects the rectangular area in the 2D array, then rearranges elements to match the index array order.
