@@ -123,3 +123,12 @@ print(np.shares_memory(whered, asc))
 
 
 print('Statistical Methods and More Math')
+x13 = np.random.standard_normal((5, 4))
+print(x13)
+print(x13.mean())
+print('Sums:')
+print(x13.sum(axis=0))
+print(x13.sum(axis=1))
+print('Cumsums:')
+print(x13.cumsum(axis=0))
+print(x13.cumsum(axis=1))
