@@ -125,10 +125,50 @@ print(np.shares_memory(whered, asc))
 print('Statistical Methods and More Math')
 x13 = np.random.standard_normal((5, 4))
 print(x13)
+print('Mean')
 print(x13.mean())
+print('Standard deviation')
+print(x13.std())
+print('Variance')
+print(x13.var())
 print('Sums:')
 print(x13.sum(axis=0))
 print(x13.sum(axis=1))
-print('Cumsums:')
-print(x13.cumsum(axis=0))
-print(x13.cumsum(axis=1))
+print('Cumulative sums:') # Useful when analyzing trends or growth over times.
+print(x13.cumsum(axis=0)) # Notice how the last row correlates to the sum(axis=0) values.
+print(x13.cumsum(axis=1)) # Notice how the last column correlates to the sum(axis=1) values.
+print('Product')
+print(x13.prod(axis=0))
+print(x13.prod(axis=1))
+print('Cumulative product')
+print(x13.cumprod(axis=0))
+print(x13.cumprod(axis=1))
+print('Indices of min and max elements')
+print(f'({x13.argmin()}, {x13.argmax()}) => ({x13[np.unravel_index(x13.argmin(), x13.shape)]}, {x13[np.unravel_index(x13.argmax(), x13.shape)]})')
+
+
+print('Boolean array methods')
+x14 = np.arange(16)
+print(x14)
+print((x14 % 2 == 0).sum()) # Count how many True value are in this array.
+print((x14.reshape(-1, 8) % 2 == 0).sum())
+print((x14 % 2 == 0).any())
+print((x14.reshape(-1, 8) % 2 == 0).all())
+
+
+print('Sorting')
+print('1D array')
+x15 = np.random.standard_normal(8)
+print(x15)
+x15.sort() # Sorts in-place.
+print(x15)
+
+print('2D array')
+x16 = np.random.standard_normal((8, 4))
+print(x16)
+x17 = x16.copy()
+x17.sort(axis=0)
+print(x17)
+x18 = x16.copy()
+x18.sort(axis=1)
+print(x18)
