@@ -2,14 +2,20 @@ import numpy as np
 
 
 # Matrix math.
-print('Matrix Math')
+print('Matrix Math and Linear Algebra')
 
 # Adding 1D vectors together:
 # [1, 2, 3, 4] + [5, 6, 7, 8] = [1+5, 2+6, 3+7, 4+8] = [6, 8, 10, 12]
 # It's the same process for subtractions, multiplication, and division: it is element-wise.
 x = np.array([1, 2, 3, 4])
 y = np.array([5, 6, 7, 8])
-print(x + y)
+print(f'x: {x}')
+print(f'y: {y}')
+
+print(f'x+y: {x + y}')
+print(f'x*y: {x * y}')
+print(f'x/y: {x / y}')
+print(f'x-y: {x - y}')
 
 
 # Adding a scalar to a 1D vector:
@@ -41,6 +47,9 @@ print(np.dot(x1, y1))
 # ]
 # = [[113, 143], [71, 89]]
 print(np.dot(y1, x1))
+
+
+exit()
 
 
 # Some NumPy functions.
