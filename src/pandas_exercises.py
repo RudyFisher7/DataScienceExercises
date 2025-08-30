@@ -14,3 +14,36 @@ df_students = pd.DataFrame({
 })
 
 print(df_students.head())
+
+print('Series')
+print('Construction')
+dict1 = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
+dict1_keys = ['Texas', 'Oregon', 'Ohio', 'Utah', 'California']
+
+# Some ways to create a Series.
+series1 = pd.Series([4, 7, -5, 3])
+series2 = pd.Series([4, 7, -5, 3], index=['a', 'b', 'c', 'd'])
+series3 = pd.Series(dict1) # From a Python dict.
+series4 = pd.Series(dict1, index=dict1_keys, name='population') # From a Python dict with keys in a specific order.
+series4.index.name = 'state'
+print(series1)
+print(series2)
+print(series3)
+print(series4)
+
+print('Some Operations')
+print(series2[series2 > 0])
+print('b' in series2)
+print(series4.isna())
+
+
+print('DataFrame')
+print('Construction')
+dict2 = {
+    'state': ['Texas', 'Oregon', 'Ohio', 'Utah', 'California'],
+    'year': [2000, 2001, 2002, 2001, 2003],
+    'population': [35000, 71000, 16000, 5000, 5000],
+}
+
+df1 = pd.DataFrame(dict2)
+print(df1)
