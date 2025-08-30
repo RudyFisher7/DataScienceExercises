@@ -46,4 +46,32 @@ dict2 = {
 }
 
 df1 = pd.DataFrame(dict2)
-print(df1)
+print(df1.head())
+
+
+print('Some Operations')
+df2 = pd.DataFrame(dict2, columns=['year', 'state', 'population', 'debt'], index=dict2['state'])
+print(df2)
+print(df2['state'])
+
+
+print('iloc and loc Selection')
+print('loc --------')
+print(df2.loc['Oregon'])
+print('loc --------')
+print(df2.loc[:'Oregon'])
+print('loc --------')
+print(df2.loc[['Oregon', 'Texas']])
+print('loc --------')
+print(df2.loc[['Oregon', 'Texas'], ['state', 'population']])
+print('loc --------')
+print(df2.loc[df2['population'] > 5000]) # Boolean arrays work with loc but not iloc.
+
+print('iloc --------')
+print(df2.iloc[1])
+print('iloc --------')
+print(df2.iloc[:2]) # Notice that this must be index 2 to behave inclusively like loc[:'Oregon'] above.
+print('iloc --------')
+print(df2.iloc[[1, 0]])
+print('iloc --------')
+print(df2.iloc[[1, 0], [1, 2]])
